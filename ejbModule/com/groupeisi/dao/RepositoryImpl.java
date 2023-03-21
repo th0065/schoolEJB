@@ -12,12 +12,12 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class RepositoryImpl<T> implements Repository<T> {
 
-	@PersistenceContext(unitName="schoolEJB")
+	@PersistenceContext(unitName="CvEJB")
 	private EntityManager em;
 	private EntityManagerFactory emf;
 	
 	 public RepositoryImpl() {
-    	 this.emf = Persistence.createEntityManagerFactory("schoolEJB");
+    	 this.emf = Persistence.createEntityManagerFactory("CvEJB");
 		 this.em = emf.createEntityManager();
 		  
 		  
@@ -68,7 +68,7 @@ public class RepositoryImpl<T> implements Repository<T> {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public T get(int id, T t) {
+	public T gets(int id, T t) {
 		String table=t.getClass().getSimpleName();
         t=(T) em.createQuery("SELECT t FROM " + table + " t WHERE t.id=:id").setParameter("id", id).getSingleResult();
         return t;

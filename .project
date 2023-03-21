@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>schoolEJB</name>
+	<name>EJB</name>
 	<comment></comment>
 	<projects>
+		<project>EAR</project>
+		<project>WEB</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -43,7 +45,6 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.jboss.tools.jst.web.kb.kbnature</nature>
 		<nature>org.jboss.tools.cdi.core.cdinature</nature>
-		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
 </projectDescription>

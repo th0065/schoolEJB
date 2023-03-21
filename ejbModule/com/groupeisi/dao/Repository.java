@@ -11,7 +11,7 @@ public interface Repository <T>{
 	public int update(T t);
 	public List<T> list(T t);
 	public List<T> liste(T t,int start,int total);
-	public T get(int id,T t);
+	public T gets(int id,T t);
 	
 	
 }

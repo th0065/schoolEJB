@@ -2,6 +2,8 @@ package com.groupeisi.entities;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -22,11 +24,18 @@ public class Compte implements Serializable {
 	
 	@NotNull
 	@Length(max=80)
-	private String login;
+	private String email;
 	
+	
+	
+	
+
 	@NotNull
 	@Length(max=80)
 	private String password;
+	
+	@OneToMany(mappedBy="compte",fetch = FetchType.EAGER)
+	private List<Cv> cvs;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -39,13 +48,15 @@ public class Compte implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
-	}   
-	public String getLogin() {
-		return this.login;
+	}  
+	
+	
+	public String getEmail() {
+		return this.email;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setEmail(String email) {
+		this.email = email;
 	}   
 	public String getPassword() {
 		return this.password;
